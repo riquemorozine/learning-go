@@ -1,11 +1,24 @@
 package main
 
-func sum(a, b int) int {
-	return a + b
+import (
+	"errors"
+	"fmt"
+)
+
+func sum(a, b int) (int, error) {
+	if a+b >= 50 {
+		return 0, errors.New(" The sum is greater than 50")
+	} // If the sum of the two numbers is greater than 50, return an error
+
+	return a + b, nil
 } // Create a function that receives two integers and returns the sum of them
 
 func main() {
-	var res int = sum(1, 2)
+	res, err := sum(1, 2)
 
-	println(res)
-} // Call the function 'sum' with the values 1 and 2 and print the result
+	if err != nil {
+		fmt.Println(res)
+	}
+
+	fmt.Println(res)
+} // Call the function sum and print the result of the sum
