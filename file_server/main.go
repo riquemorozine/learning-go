@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fileServer := http.FileServer(http.Dir("./public"))
+	fileServer := http.FileServer(http.Dir("./file_server/public"))
 	mux := http.NewServeMux()
 
 	println(http.Dir("./public"))
