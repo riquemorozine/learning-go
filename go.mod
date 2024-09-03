@@ -1,4 +1,4 @@
-module LearningGo
+module github.com/riquemorozine/learning-go
 
 go 1.23
 
